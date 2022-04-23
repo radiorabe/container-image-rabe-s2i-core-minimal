@@ -30,6 +30,7 @@ RUN  microdnf install -y \
        groff-base \
        rsync \
        scl-utils \
+       shadow-utils \
        tar \
        unzip \
        xz \

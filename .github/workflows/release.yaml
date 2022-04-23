@@ -24,7 +24,7 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           images: |
-            ghcr.io/radiorabe/ubi8-minimal
+            ghcr.io/radiorabe/s2i-core
           tags: |
             type=schedule
             type=ref,event=branch
