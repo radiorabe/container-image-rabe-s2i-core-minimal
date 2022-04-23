@@ -21,27 +21,26 @@ COPY --from=registry.access.redhat.com/ubi8/s2i-core:1-282 \
      /opt/app-root/etc/scl_enable \
      /opt/app-root/etc/
 
-RUN  microdnf install -y \
-       bsdtar \
-       findutils \
-       gettext \
-       glibc-locale-source \
-       glibc-langpack-en \
-       groff-base \
-       rsync \
-       scl-utils \
-       shadow-utils \
-       tar \
-       unzip \
-       xz \
-    && microdnf clean all
-
+RUN    microdnf install -y \
+         bsdtar \
+         findutils \
+         gettext \
+         glibc-locale-source \
+         glibc-langpack-en \
+         groff-base \
+         rsync \
+         scl-utils \
+         shadow-utils \
+         tar \
+         unzip \
+         xz \
+    && microdnf clean all \
+    && rpm-file-permissions \
+    && useradd -u 1001 -r -g 0 -d ${HOME} -s /sbin/nologin \
+       -c "Default Application User" default \
+    && chown -R 1001:0 ${APP_ROOT}
+    
 WORKDIR ${HOME}
 
 ENTRYPOINT ["container-entrypoint"]
 CMD ["base-usage"]
-
-RUN    rpm-file-permissions \
-    && useradd -u 1001 -r -g 0 -d ${HOME} -s /sbin/nologin \
-       -c "Default Application User" default \
-    && chown -R 1001:0 ${APP_ROOT}
