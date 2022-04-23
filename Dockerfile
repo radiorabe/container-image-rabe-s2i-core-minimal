@@ -12,7 +12,7 @@ ENV \
 COPY --from=registry.access.redhat.com/ubi8/s2i-core:1-282 \
      /usr/bin/base-usage \
      /usr/bin/container-entrypoint \
-     /usr/bin/cgroups-limit \
+     /usr/bin/cgroup-limits \
      /usr/bin/fix-permissions \
      /usr/bin/prepare-yum-repositories \
      /usr/bin/rpm-file-permissions \
