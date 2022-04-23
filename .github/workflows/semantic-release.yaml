@@ -1,7 +1,6 @@
 name: Run semantic-release
 
 on:
-  pull_request:
   push:
     branches:
       - main
@@ -21,4 +20,3 @@ jobs:
         with:
           github-token: ${{ secrets.RABE_ITREAKTION_GITHUB_TOKEN }}
           allow-initial-development-versions: true
-          dry: ${{ github.ref != 'refs/heads/main' }}
