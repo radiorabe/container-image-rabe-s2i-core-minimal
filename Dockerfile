@@ -19,7 +19,7 @@ COPY --from=registry.access.redhat.com/ubi8/s2i-core:1-282 \
      /usr/bin/
 COPY --from=registry.access.redhat.com/ubi8/s2i-core:1-282 \
      /opt/app-root/etc/scl_enable \
-     /opt/app-root/etc
+     /opt/app-root/etc/
 
 RUN  microdnf install -y \
        bsdtar \
