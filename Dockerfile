@@ -9,7 +9,7 @@ ENV \
     PATH=/opt/app-root/src/bin:/opt/app-root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
     PLATFORM="el8"
 
-COPY --from=registry.access.redhat.com/ubi8/s29-core:1-282 \
+COPY --from=registry.access.redhat.com/ubi8/s2i-core:1-282 \
      /usr/bin/base-usage \
      /usr/bin/container-entrypoint \
      /usr/bin/cgroups-limit \
@@ -17,7 +17,7 @@ COPY --from=registry.access.redhat.com/ubi8/s29-core:1-282 \
      /usr/bin/prepare-yum-repositories \
      /usr/bin/rpm-file-permissions \
      /usr/bin/
-COPY --from=registry.access.redhat.com/ubi8/s29-core:1-282 \
+COPY --from=registry.access.redhat.com/ubi8/s2i-core:1-282 \
      /opt/app-root/etc/scl_enable \
      /opt/app-root/etc
 
