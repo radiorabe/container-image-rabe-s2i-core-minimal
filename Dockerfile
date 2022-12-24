@@ -1,4 +1,4 @@
-FROM ghcr.io/radiorabe/ubi8-minimal:1.0.0
+FROM ghcr.io/radiorabe/ubi8-minimal:1.0.1
 
 ENV \
     # Path to be used in other layers to place s2i scripts into
