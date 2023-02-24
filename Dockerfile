@@ -7,7 +7,7 @@ ENV \
     # The $HOME is not set by default, but some applications needs this variable
     HOME=/opt/app-root/src \
     PATH=/opt/app-root/src/bin:/opt/app-root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
-    PLATFORM="el8"
+    PLATFORM="el9"
 
 COPY --from=registry.access.redhat.com/ubi9/s2i-core:1-373 \
      /usr/bin/base-usage \
