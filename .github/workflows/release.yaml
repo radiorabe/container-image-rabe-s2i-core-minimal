@@ -73,7 +73,7 @@ jobs:
         uses: docker/setup-buildx-action@v2
 
       - name: Verify signature and annotations on images in Dockerfile using cosign
-        run: cosign dockerfile verify Dockerfile > /dev/null
+        run: cosign dockerfile verify --certificate-oidc-issuer https://token.actions.githubusercontent.com --certificate-identity-regexp 'https://github.com/radiorabe/container-image-ubi9-minimal/.*' Dockerfile > /dev/null
 
       - name: Build Container Image
         id: docker_build
