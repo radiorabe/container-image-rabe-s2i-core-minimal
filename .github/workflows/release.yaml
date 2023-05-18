@@ -133,4 +133,4 @@ jobs:
 
       - name: Sign the images with GitHub OIDC Token using cosign
         run: cosign sign ghcr.io/radiorabe/s2i-core:${{ steps.docker_push.outputs.digest }}
-        if: github.event_name != 'pull_request'
+        if: ${{ github.event_name != 'pull_request' && startsWith(github.event.ref, 'refs/tags/v') }}
