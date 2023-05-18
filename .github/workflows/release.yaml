@@ -74,8 +74,6 @@ jobs:
 
       - name: Verify signature and annotations on images in Dockerfile using cosign
         run: cosign dockerfile verify Dockerfile > /dev/null
-        env:
-          COSIGN_EXPERIMENTAL: true
 
       - name: Build Container Image
         id: docker_build
@@ -134,8 +132,5 @@ jobs:
           DOCKER_CONTENT_TRUST: 1
 
       - name: Sign the images with GitHub OIDC Token using cosign
-        run: cosign sign ${TAGS}
+        run: cosign sign ghcr.io/radiorabe/s2i-core:${{ steps.docker_push.outputs.digest }}
         if: github.event_name != 'pull_request'
-        env:
-          TAGS: ${{ steps.meta.outputs.tags }}
-          COSIGN_EXPERIMENTAL: true
