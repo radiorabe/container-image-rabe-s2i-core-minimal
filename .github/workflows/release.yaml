@@ -10,7 +10,7 @@ on:
 
 jobs:
   release-container:
-    uses: radiorabe/actions/.github/workflows/release-container.yaml@main
+    uses: radiorabe/actions/.github/workflows/release-container.yaml@0.9.1
     with:
       image: 'ghcr.io/radiorabe/s2i-core' 
       name: 's2i-core'
