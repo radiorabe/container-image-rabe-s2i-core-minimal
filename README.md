@@ -4,9 +4,9 @@ The RaBe S2I Core Minimal Image resembles a classic [sclorg/s2i-core](https://gi
 image with the main difference being that it does not include `yum` since it is based on the RaBe UBI8 Minimal Image.
 It's main use is as a downstream for RaBe S2I tooling.
 
-The image is based on the [RaBe Universal Base Image 8 Minimal](https://github.com/radiorabe/container-image-ubi8-minimal)
-which is in turn based on the [Red Hat Universal Base Image 8 Minimal](https://catalog.redhat.com/software/containers/ubi8/ubi-minimal/5c359a62bed8bd75a2c3fba8)
-container provided by Red Hat. It uses parts of the [Red Hat S2I Core Image](https://catalog.redhat.com/software/containers/ubi8/s2i-core/5c83967add19c77a15918c27).
+The image is based on the [RaBe Universal Base Image 9 Minimal](https://github.com/radiorabe/container-image-ubi9-minimal)
+which is in turn based on the [AlmaLinux 9 UBI9 variant image](https://github.com/AlmaLinux/docker-images)
+container provided by AlmaLinux and based on the work from [Red Hat](https://catalog.redhat.com/software/containers/ubi9-minimal/61832888c0d15aff4912fe0d). It uses parts of the [Red Hat S2I Core Image](https://catalog.redhat.com/software/containers/ubi9/s2i-core/61fb9fa7891fad8774b86e06).
 
 ## Features
 

@@ -1,0 +1,19 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: s2i-core-minimal
+  title: UBI9 S2I Core Minimal
+  description: S2I Core Minimal container base image based on UBI9 Minimal.
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: radiorabe/container-image-rabe-s2i-core-minimal
+  links:
+    - url: https://catalog.redhat.com/software/containers/ubi9/s2i-core/61fb9fa7891fad8774b86e06
+      title: Red Hat S2I Core
+spec:
+  type: baseimage
+  lifecycle: experimental
+  owner: it-reaktion
+  dependsOn:
+    - component:default/rabe-ubi9-minimal
