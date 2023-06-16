@@ -12,7 +12,7 @@ metadata:
     - url: https://catalog.redhat.com/software/containers/ubi9/s2i-core/61fb9fa7891fad8774b86e06
       title: Red Hat S2I Core
 spec:
-  type: baseimage
+  type: image
   lifecycle: experimental
   owner: it-reaktion
   dependsOn:
