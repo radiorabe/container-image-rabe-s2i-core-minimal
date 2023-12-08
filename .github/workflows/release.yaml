@@ -16,5 +16,6 @@ jobs:
       name: 's2i-core'
       display-name: 'RaBe S2I Core Minimal'
       tags: 'minimal rhel9 rabe s2i'
+      cosign-base-image-only: true
   mkdocs:
     uses: radiorabe/actions/.github/workflows/release-mkdocs.yaml@v0.18.0
