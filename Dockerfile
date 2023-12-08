@@ -1,3 +1,4 @@
+FROM registry.access.redhat.com/ubi9/s2i-core:1-454 as base
 FROM ghcr.io/radiorabe/ubi9-minimal:0.6.1
 
 ENV \
@@ -9,7 +10,7 @@ ENV \
     PATH=/opt/app-root/src/bin:/opt/app-root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
     PLATFORM="el9"
 
-COPY --from=registry.access.redhat.com/ubi9/s2i-core:1-454 \
+COPY --from=base \
      /usr/bin/base-usage \
      /usr/bin/container-entrypoint \
      /usr/bin/cgroup-limits \
@@ -17,7 +18,7 @@ COPY --from=registry.access.redhat.com/ubi9/s2i-core:1-454 \
      /usr/bin/prepare-yum-repositories \
      /usr/bin/rpm-file-permissions \
      /usr/bin/
-COPY --from=registry.access.redhat.com/ubi9/s2i-core:1-454 \
+COPY --from=base \
      /opt/app-root/etc/scl_enable \
      /opt/app-root/etc/
 
