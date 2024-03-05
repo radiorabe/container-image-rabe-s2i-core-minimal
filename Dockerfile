@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi9/s2i-core:1-462 as base
+FROM registry.access.redhat.com/ubi9/s2i-core:1-474 as base
 FROM ghcr.io/radiorabe/ubi9-minimal:0.6.5
 
 ENV \
