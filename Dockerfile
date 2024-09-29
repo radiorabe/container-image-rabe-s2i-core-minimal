@@ -1,5 +1,5 @@
 FROM registry.access.redhat.com/ubi9/s2i-core:1-511.1726662972 as base
-FROM ghcr.io/radiorabe/ubi9-minimal:0.7.2
+FROM ghcr.io/radiorabe/ubi9-minimal:0.7.3
 
 ENV \
     # Path to be used in other layers to place s2i scripts into
