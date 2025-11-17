@@ -19,10 +19,12 @@ COPY --from=base \
      /usr/bin/rpm-file-permissions \
      /usr/bin/
 COPY --from=base \
-     /opt/app-root/etc/scl_enable \
-     /opt/app-root/etc/
+     /opt/app-root/bin/activate \
+     /opt/app-root/bin/
 
-RUN    microdnf install -y \
+RUN <<-EOR
+    set -xe
+    microdnf install -y \
          bsdtar \
          findutils \
          gettext \
@@ -34,12 +36,18 @@ RUN    microdnf install -y \
          shadow-utils \
          tar \
          unzip \
-         xz \
-    && microdnf clean all \
-    && rpm-file-permissions \
-    && useradd -u 1001 -r -g 0 -d ${HOME} -c "Default Application User" default \
-    && chown -R 1001:0 ${APP_ROOT}
-    
+         xz
+    microdnf clean all
+    rpm-file-permissions
+    useradd -u 1001 -r -g 0 -d ${HOME} -c "Default Application User" default
+    chown -R 1001:0 ${APP_ROOT}
+EOR
+
+# Ensure the virtual environment is active in interactive shells
+ENV BASH_ENV=${APP_ROOT}/bin/activate \
+    ENV=${APP_ROOT}/bin/activate \
+    PROMPT_COMMAND=". ${APP_ROOT}/bin/activate"
+
 WORKDIR ${HOME}
 
 ENTRYPOINT ["container-entrypoint"]
