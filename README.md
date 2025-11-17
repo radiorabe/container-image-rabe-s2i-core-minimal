@@ -20,7 +20,7 @@ Create a downstream image from `ghcr.io/radiorabe/s2i-core`. Replace `:latest` w
 ```Dockerfile
 FROM ghcr.io/radiorabe/s2i-core:latest AS build
 
-RUN "hello world"
+RUN echo "hello world"
 ```
 
 Preferably you should use a downstream base image for you needs.
