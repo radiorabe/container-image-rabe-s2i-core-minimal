@@ -433,7 +433,7 @@ container provided by AlmaLinux and based on the work from <a href="https://cata
 <p>Create a downstream image from <code>ghcr.io/radiorabe/s2i-core</code>. Replace <code>:latest</code> with a specific version in the examples below.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">ghcr.io/radiorabe/s2i-core:latest</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">build</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">RUN</span><span class="w"> </span><span class="s2">&quot;hello world&quot;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">RUN</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;hello world&quot;</span>
 </code></pre></div>
 <p>Preferably you should use a downstream base image for you needs.</p>
 <h2 id="downstream-base-images">Downstream Base Images</h2>
