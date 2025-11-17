@@ -18,9 +18,6 @@ COPY --from=base \
      /usr/bin/prepare-yum-repositories \
      /usr/bin/rpm-file-permissions \
      /usr/bin/
-COPY --from=base \
-     /opt/app-root/bin/activate \
-     /opt/app-root/bin/
 
 RUN <<-EOR
     set -xe
@@ -42,11 +39,6 @@ RUN <<-EOR
     useradd -u 1001 -r -g 0 -d ${HOME} -c "Default Application User" default
     chown -R 1001:0 ${APP_ROOT}
 EOR
-
-# Ensure the virtual environment is active in interactive shells
-ENV BASH_ENV=${APP_ROOT}/bin/activate \
-    ENV=${APP_ROOT}/bin/activate \
-    PROMPT_COMMAND=". ${APP_ROOT}/bin/activate"
 
 WORKDIR ${HOME}
 
