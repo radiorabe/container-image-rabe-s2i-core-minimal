@@ -36,6 +36,7 @@ RUN <<-EOR
          xz
     microdnf clean all
     rpm-file-permissions
+    mkdir -p ${APP_ROOT}
     useradd -u 1001 -r -g 0 -d ${HOME} -c "Default Application User" default
     chown -R 1001:0 ${APP_ROOT}
 EOR
