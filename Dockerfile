@@ -1,4 +1,4 @@
-FROM quay.io/sclorg/s2i-core-c9s:20260609@sha256:843579f901efb1ac54861a212dafcfaac84120e2f523ba8f8f36462bfce73f31 AS base
+FROM quay.io/sclorg/s2i-core-c9s:20260804@sha256:c0a4c8db16a4dd5a475ad80531eae3dbb095e30becde638621274888480b6b15 AS base
 FROM ghcr.io/radiorabe/ubi9-minimal:0.12.0@sha256:ddf3ac33c48b5005cc325732cb547279a926f29b3db9adcbd844f1cf94dcf831
 
 ENV \
