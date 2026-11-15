@@ -1,5 +1,5 @@
-FROM quay.io/sclorg/s2i-core-c9s:20260609@sha256:843579f901efb1ac54861a212dafcfaac84120e2f523ba8f8f36462bfce73f31 AS base
-FROM ghcr.io/radiorabe/ubi9-minimal:0.12.0@sha256:ddf3ac33c48b5005cc325732cb547279a926f29b3db9adcbd844f1cf94dcf831
+FROM quay.io/sclorg/s2i-core-c9s:20261110@sha256:c908c17724f499a31ce54ff396bb497ecd96e4dddb4e5b2d7053cbbdde6821b8 AS base
+FROM ghcr.io/radiorabe/ubi9-minimal:0.12.1@sha256:9a3f83629f9dd656727266b28ceb962824a337c34dab911ff4f0fce75acea642
 
 ENV \
     # Path to be used in other layers to place s2i scripts into
